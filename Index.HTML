@@ -18,6 +18,9 @@
         <title> Brady's Website</title>
     </head>
     <body>
+        <div class="welcome">
+
+        </div>            
         <div class="container-fluid">
             <nav class="navbar navbar-inverse">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -78,6 +81,15 @@
                     <img src="https://banner2.cleanpng.com/20180406/gyw/kisspng-snapchat-social-media-youtube-snap-inc-snapchat-5ac76096c3b820.3356164815230158308017.jpg" alt="Snapchat profile">
                 </a>
             </footer>    
-        </div>            
+        </div>    
+        <script>
+        if (localStorage.user){
+            $(".welcome").text("Welcome "  + localStorage.user + "!");
+        }else{
+            var name = prompt("What is your name?")
+            localStorage.setItem("user", name);
+            $(".welcome").text("Welcome "  + localStorage.user + "!");
+        }        
+        </script>        
     </body>
 </html>
